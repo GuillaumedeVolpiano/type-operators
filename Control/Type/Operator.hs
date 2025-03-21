@@ -37,7 +37,7 @@ infixr 5 ^>
 type (<^) a b = (^>) b a
 infixr 5 <^
 
--- | Infix application.
+-- | Infix application.5
 --
 -- @
 -- f :: Either String $ Maybe Int
@@ -94,7 +94,7 @@ infixl 9 <=>
 -- @
 type family (<+>) (a :: k1) (b :: k2) :: Constraint
 type instance (<+>) _ [] = (() :: Constraint)
-type instance (<+>) [] _ = (() :: Constraint)
+-- type instance (<+>) [] _ = (() :: Constraint)
 type instance (<+>) (c ': cs) (a :: Type) = (c a, a <+> cs)
 type instance (<+>) c (a ': as) = (c a, c <+> as)
 infixl 9 <+>
